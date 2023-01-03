@@ -1,8 +1,11 @@
 #Stack implementation
 stack=[]
 def push():
-    element = input("Enter the element: ")
-    stack.append(element)
+    if len(stack)==len_stack:
+        print("Stack is full")
+    else:
+        element = input("Enter the element: ")
+        stack.append(element)
     print(stack)
 
 def pop():
@@ -12,9 +15,9 @@ def pop():
         element = stack.pop()
         print("Element popped: ",element)
         print(stack)
-
-while True:
-    user_input = int(input("Enter your choice: \n 1. Push\n 2.Pop\n 3.Quit\n"))
+len_stack=int(input("Limit of stack: "))
+while True:  
+    user_input = int(input("Enter your choice: \n 1. Push\n 2.Pop\n 3.Quit\n ->"))
     if user_input==1:
         push()
     elif user_input==2:
