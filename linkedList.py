@@ -47,6 +47,25 @@ class LinkedList:
             NewNode.next = temp.next
             temp.next = NewNode
 
+    def push_beforeNode(self,data,x):
+        NewNode = Node(data)
+        if self.head is None:
+            print("Linked List is empty") 
+            return
+        if self.head.data == x: #if the node is to pushed before first node
+            NewNode.next = self.head
+            self.head = NewNode            
+        else: #finding previous node
+            temp = self.head
+            while temp.next is not None:
+                if temp.next.data == x:
+                    break
+                temp = temp.next
+            if temp.next is None:
+                print("Node is not present in a Linked List")
+            else:
+                NewNode.next = temp.next
+                temp.next = NewNode
 
 myList = LinkedList()
 first = Node(10)
@@ -61,6 +80,7 @@ second.next =third
 myList.push_begin(5)
 myList.push_end(40)
 myList.push_afterNode(15,10)
+myList.push_beforeNode(35,400)
 myList.print_list()
 
 #push node at any position of LL
