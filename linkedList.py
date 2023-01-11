@@ -32,6 +32,21 @@ class LinkedList:
             while temp.next is not None:
                 temp = temp.next
             temp.next = NewNode
+    
+    def push_afterNode(self,data,x):
+        temp = self.head
+        while temp is not None:
+            if temp.data == x:
+                break
+            temp = temp.next
+        
+        if temp is None:
+            print("Node is not present in a Linked List")
+        else:
+            NewNode = Node(data)
+            NewNode.next = temp.next
+            temp.next = NewNode
+
 
 myList = LinkedList()
 first = Node(10)
@@ -45,6 +60,7 @@ second.next =third
 #myList.print_list()
 myList.push_begin(5)
 myList.push_end(40)
+myList.push_afterNode(15,10)
 myList.print_list()
 
 #push node at any position of LL
