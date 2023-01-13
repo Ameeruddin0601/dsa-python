@@ -67,6 +67,13 @@ class LinkedList:
                 NewNode.next = temp.next
                 temp.next = NewNode
 
+    def insert_empty(self,data):
+        if self.head is None:
+            NewNode = Node(data)
+            self.head = NewNode
+        else:
+            print("Linked List Is Not Empty")
+
 myList = LinkedList()
 first = Node(10)
 second = Node(20)
@@ -77,6 +84,7 @@ first.next = second
 second.next =third
 
 #myList.print_list()
+# myList.insert_empty(25)
 myList.push_begin(5)
 myList.push_end(40)
 myList.push_afterNode(15,10)
