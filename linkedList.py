@@ -84,12 +84,29 @@ class LinkedList:
     def del_last(self):
         if self.head is None:
             print("LL is already empty")
+        elif self.head.next is None:
+            self.head = None     
         else:
             temp = self.head
             while temp.next.next is not None:
                 temp = temp.next
             temp.next = None
-            
+    
+    def del_node(self,data):
+        if self.head is None:
+            print("LL is already empty")       
+        elif data==self.head.data:
+            self.del_first()        
+        else:
+            temp = self.head
+            while temp.next is not None:
+                if temp.next.data == data:
+                    break
+                temp = temp.next
+            if temp.next is None:
+                print("Node is not present in a Linked List")
+            else:
+                temp.next = temp.next.next               
 
 myList = LinkedList()
 first = Node(10)
@@ -108,6 +125,7 @@ myList.push_afterNode(15,10)
 myList.push_beforeNode(35,400)
 myList.del_first()
 myList.del_last()
+myList.del_node(45)
 myList.print_list()
 
 #push node at any position of LL
