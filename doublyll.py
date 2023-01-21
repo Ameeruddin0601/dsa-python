@@ -44,8 +44,17 @@ class DoublyLL:
             NewNode.next = self.head
             self.head.prev = NewNode
             self.head = NewNode
-    def push_end(data):
-        pass
+    def push_end(self,data):
+        NewNode = Node(data)
+        if self.head is None:
+            self.head =None
+        else:
+            temp = self.head
+            while temp.next is not None:
+                temp = temp.next            
+            NewNode.prev = temp
+            temp.next = NewNode
+
     def push_afterNode(data):
         pass
     def push_beforeNode(data):
@@ -71,4 +80,5 @@ third.prev = second
 
 # myList.print_dll_reverse()
 myList.push_begin(5)
+myList.push_end(40)
 myList.print_dll()
