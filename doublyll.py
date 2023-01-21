@@ -127,8 +127,11 @@ class DoublyLL:
             print("Linked List is empty")
             return
         if self.head.next is None:
-            self.head = None
-            print("Node deleted. List is empty now")
+            if data == self.head.data:
+                self.head = None
+                print("Node deleted. List is empty now")
+            else:
+                print("Node not found")
         else:
             temp = self.head
             while temp is not None:
