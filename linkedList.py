@@ -127,6 +127,3 @@ myList.del_first()
 myList.del_last()
 myList.del_node(45)
 myList.print_list()
-
-#push node at any position of LL
-#delete node at any position of LL
