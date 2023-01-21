@@ -77,8 +77,27 @@ class DoublyLL:
                     temp.next.prev = NewNode    
                     temp.next = NewNode
 
-    def push_beforeNode(data):
-        pass
+    def push_beforeNode(self,data,x):
+        NewNode = Node(data)
+        if self.head is None:
+            print("Linked List is empty")
+        else:
+            temp = self.head
+            while temp is not None:
+                if temp.data == x:
+                    break
+                temp = temp.next
+            if temp is None:
+                print("Node not found")
+            else:
+                if temp.prev is None:
+                    self.push_begin(data)
+                else:
+                    NewNode.prev = temp.prev
+                    NewNode.next = temp
+                    temp.prev.next = NewNode
+                    temp.prev = NewNode
+
 
     def del_first(data):
         pass
@@ -104,4 +123,6 @@ myList.push_begin(5)
 myList.push_end(40)
 myList.push_afterNode(15,10)
 myList.push_afterNode(50,40)
+myList.push_beforeNode(2.5,5)
+myList.push_beforeNode(60,50)
 myList.print_dll()
