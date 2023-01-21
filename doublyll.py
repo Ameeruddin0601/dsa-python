@@ -8,6 +8,7 @@ class DoublyLL:
     def __init__(self):
         self.head = None
 
+    #traversal
     def print_dll(self):
         if self.head is None:
             print("List is empty")
@@ -16,6 +17,7 @@ class DoublyLL:
             while temp is not None:
                 print(temp.data, end=" > ")
                 temp = temp.next
+    #reverse traversal
     def print_dll_reverse(self):
         if self.head is None:
             print("List is empty")
@@ -26,16 +28,27 @@ class DoublyLL:
             while temp is not None:
                 print(temp.data, end=" > ")
                 temp = temp.prev
+    
+    def push_empty(self,data):
+        if self.head is None:
+            NewNode = Node(data)
+            self.head = NewNode
+        else:
+            print("List is not empty")
 
-    def push_begin(data):
-        pass
+    def push_begin(self,data):
+        NewNode = Node(data)
+        if self.head is None:
+            self.head = NewNode
+        else:
+            NewNode.next = self.head
+            self.head.prev = NewNode
+            self.head = NewNode
     def push_end(data):
         pass
     def push_afterNode(data):
         pass
     def push_beforeNode(data):
-        pass
-    def push_empty(data):
         pass
 
     def del_first(data):
@@ -56,5 +69,6 @@ second.prev = first
 second.next = third
 third.prev = second
 
-myList.print_dll()
 # myList.print_dll_reverse()
+myList.push_begin(5)
+myList.print_dll()
