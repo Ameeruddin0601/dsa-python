@@ -148,8 +148,8 @@ class DoublyLL:
                 else:                
                     temp.prev.next = temp.next
                     temp.next.prev = temp.prev
-                    temp.next = None
-                    temp.prev = None
+                    # temp.next = None
+                    # temp.prev = None
 
 myList = DoublyLL()
 first = Node(10) # myList.push_empty(10)
